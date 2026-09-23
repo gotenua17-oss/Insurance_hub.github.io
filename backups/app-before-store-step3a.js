@@ -283,46 +283,4 @@
     }
   });
 
-  /* =========================================================
-     INSURANCE STORE — PRODUCT INTERACTION
-     ========================================================= */
-
-  $$("[data-product]").forEach(button => {
-    button.addEventListener("click", () => {
-
-      const product = button.dataset.product || "";
-      const card = button.closest("[data-insurance]");
-      const category =
-        card?.dataset.insurance || "Insurance";
-
-      showToast(
-        `${product} selected — ${category}`
-      );
-
-      if(heroSearch){
-        heroSearch.value = product;
-      }
-
-      const store =
-        document.querySelector("#store");
-
-      if(store){
-        store.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
-      }
-    });
-  });
-
-  $$("[data-insurance]").forEach(card => {
-    card.addEventListener("mouseenter", () => {
-      card.classList.add("store-active");
-    });
-
-    card.addEventListener("mouseleave", () => {
-      card.classList.remove("store-active");
-    });
-  });
-
 })();
