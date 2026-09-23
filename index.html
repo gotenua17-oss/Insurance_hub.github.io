@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07111f">
+<meta name="description" content="Insurance Hub — Smart insurance discovery, comparison and protection planning platform.">
+<title>Insurance Hub — Smart Protection Platform</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- APP SHELL -->
+<div class="app-shell">
+
+<!-- TOP BAR -->
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark">IH</div>
+    <div>
+      <div class="brand-name">Insurance<span>Hub</span></div>
+      <div class="brand-sub">SMART PROTECTION PLATFORM</div>
+    </div>
+  </div>
+
+  <nav class="desktop-nav">
+    <a href="#home" class="active">Overview</a>
+    <a href="#solutions">Solutions</a>
+    <a href="#planner">Planner</a>
+    <a href="#claims">Claims</a>
+    <a href="#knowledge">Knowledge</a>
+  </nav>
+
+  <div class="top-actions">
+    <button class="icon-btn" id="searchBtn" aria-label="Search">⌕</button>
+    <button class="mode-btn" id="themeBtn">☼</button>
+    <button class="profile-btn" id="profileBtn">
+      <span class="profile-avatar">U</span>
+      <span class="profile-text">Demo User</span>
+    </button>
+  </div>
+</header>
+
+<!-- DEMO STRIP -->
+<div class="demo-strip">
+  <div>
+    <span class="pulse"></span>
+    <strong>DEMO MODE</strong>
+    <span>Illustrative platform — no real policy purchase or live premium integration.</span>
+  </div>
+  <button onclick="showToast('Production integrations can be connected later.')">How it works →</button>
+</div>
+
+<main>
+
+<!-- HERO -->
+<section class="hero section" id="home">
+
+  <div class="hero-copy">
+    <div class="eyebrow">
+      <span>✦</span> INSURANCE, REIMAGINED
+    </div>
+
+    <h1>
+      Protect what
+      <span>matters.</span>
+      Plan what’s next.
+    </h1>
+
+    <p class="hero-description">
+      One intelligent workspace to explore insurance, understand coverage,
+      compare protection needs and organise your family's financial safety net.
+    </p>
+
+    <div class="hero-actions">
+      <button class="primary-btn" onclick="scrollToSection('planner')">
+        Start Protection Plan <span>→</span>
+      </button>
+      <button class="secondary-btn" onclick="openFinder()">
+        Find My Cover
+      </button>
+    </div>
+
+    <div class="hero-note">
+      <span>✓</span> Educational & illustrative tools
+      <span>✓</span> No hidden purchase flow
+    </div>
+  </div>
+
+  <!-- HERO VISUAL -->
+  <div class="hero-dashboard">
+
+    <div class="floating-chip chip-top">
+      <span class="chip-icon">✓</span>
+      Protection status
+      <strong>Building</strong>
+    </div>
+
+    <div class="dashboard-card">
+      <div class="dashboard-head">
+        <div>
+          <small>YOUR PROTECTION MAP</small>
+          <h3>Family Security</h3>
+        </div>
+        <span class="status-dot">●</span>
+      </div>
+
+      <div class="coverage-ring">
+        <div class="ring-inner">
+          <strong>68%</strong>
+          <span>planned</span>
+        </div>
+      </div>
+
+      <div class="mini-stats">
+        <div>
+          <span>Health</span>
+          <strong>82%</strong>
+        </div>
+        <div>
+          <span>Life</span>
+          <strong>64%</strong>
+        </div>
+        <div>
+          <span>Motor</span>
+          <strong>58%</strong>
+        </div>
+      </div>
+
+      <div class="dashboard-line">
+        <span>Protection score</span>
+        <strong>Good start</strong>
+      </div>
+
+      <button onclick="openPlanner()" class="dashboard-btn">
+        Complete planner →
+      </button>
+    </div>
+
+    <div class="floating-chip chip-bottom">
+      <span>₹</span>
+      Coverage gap
+      <strong>₹8.4L</strong>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- QUICK NAV -->
+<section class="quick-nav section">
+  <div class="quick-card" onclick="openFinder()">
+    <span class="quick-icon">⌕</span>
+    <div>
+      <strong>Find insurance</strong>
+      <small>Discover protection categories</small>
+    </div>
+    <span>→</span>
+  </div>
+
+  <div class="quick-card" onclick="openCalculator('health')">
+    <span class="quick-icon">♡</span>
+    <div>
+      <strong>Health calculator</strong>
+      <small>Estimate a protection requirement</small>
+    </div>
+    <span>→</span>
+  </div>
+
+  <div class="quick-card" onclick="openCalculator('life')">
+    <span class="quick-icon">◈</span>
+    <div>
+      <strong>Life planner</strong>
+      <small>Explore financial protection</small>
+    </div>
+    <span>→</span>
+  </div>
+
+  <div class="quick-card" onclick="openCalculator('motor')">
+    <span class="quick-icon">◇</span>
+    <div>
+      <strong>Motor guide</strong>
+      <small>Understand vehicle cover</small>
+    </div>
+    <span>→</span>
+  </div>
+</section>
+
+
+<!-- SOLUTIONS -->
+<section class="section" id="solutions">
+
+  <div class="section-heading">
+    <div>
+      <span class="section-label">01 / PROTECTION SOLUTIONS</span>
+      <h2>Coverage for every chapter.</h2>
+    </div>
+    <p>
+      Explore major insurance categories through a simple,
+      education-first experience.
+    </p>
+  </div>
+
+  <div class="solution-grid">
+
+    <article class="solution-card featured" onclick="openFinder('Health')">
+      <div class="card-number">01</div>
+      <div class="solution-icon health">♡</div>
+      <h3>Health Insurance</h3>
+      <p>Understand hospitalisation, family cover, waiting periods and exclusions.</p>
+      <div class="card-bottom">
+        <span>Explore health</span><b>↗</b>
+      </div>
+    </article>
+
+    <article class="solution-card" onclick="openFinder('Life')">
+      <div class="card-number">02</div>
+      <div class="solution-icon life">◈</div>
+      <h3>Life Insurance</h3>
+      <p>Explore protection needs, dependants and long-term financial planning.</p>
+      <div class="card-bottom">
+        <span>Explore life</span><b>↗</b>
+      </div>
+    </article>
+
+    <article class="solution-card" onclick="openFinder('Motor')">
+      <div class="card-number">03</div>
+      <div class="solution-icon motor">◇</div>
+      <h3>Motor Insurance</h3>
+      <p>Understand own-damage, third-party and add-on concepts.</p>
+      <div class="card-bottom">
+        <span>Explore motor</span><b>↗</b>
+      </div>
+    </article>
+
+    <article class="solution-card" onclick="openFinder('Home')">
+      <div class="card-number">04</div>
+      <div class="solution-icon home">⌂</div>
+      <h3>Home Insurance</h3>
+      <p>Learn about property, contents and disaster-related protection.</p>
+      <div class="card-bottom">
+        <span>Explore home</span><b>↗</b>
+      </div>
+    </article>
+
+    <article class="solution-card" onclick="openFinder('Travel')">
+      <div class="card-number">05</div>
+      <div class="solution-icon travel">✈</div>
+      <h3>Travel Insurance</h3>
+      <p>Explore medical emergencies, baggage and trip-related risks.</p>
+      <div class="card-bottom">
+        <span>Explore travel</span><b>↗</b>
+      </div>
+    </article>
+
+    <article class="solution-card" onclick="openFinder('Personal Accident')">
+      <div class="card-number">06</div>
+      <div class="solution-icon accident">+</div>
+      <h3>Personal Accident</h3>
+      <p>Understand accidental death, disability and income protection concepts.</p>
+      <div class="card-bottom">
+        <span>Explore accident</span><b>↗</b>
+      </div>
+    </article>
+
+    <article class="solution-card" onclick="openFinder('Business')">
+      <div class="card-number">07</div>
+      <div class="solution-icon business">▣</div>
+      <h3>Business Insurance</h3>
+      <p>Explore risk protection concepts for small businesses and organisations.</p>
+      <div class="card-bottom">
+        <span>Explore business</span><b>↗</b>
+      </div>
+    </article>
+
+    <article class="solution-card" onclick="openFinder('Agriculture')">
+      <div class="card-number">08</div>
+      <div class="solution-icon agri">⌁</div>
+      <h3>Agriculture</h3>
+      <p>Understand agricultural risk and crop-related protection concepts.</p>
+      <div class="card-bottom">
+        <span>Explore agriculture</span><b>↗</b>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+<!-- FINDER -->
+<section class="finder-section section" id="finder">
+
+  <div class="finder-intro">
+    <span class="section-label">02 / SMART FINDER</span>
+    <h2>What are you<br><span>protecting?</span></h2>
+    <p>
+      Answer a few simple questions and build an educational
+      protection roadmap.
+    </p>
+  </div>
+
+  <div class="finder-panel">
+
+    <div class="finder-progress">
+      <div class="progress-top">
+        <span>Protection discovery</span>
+        <strong id="finderStep">1 / 4</strong>
+      </div>
+      <div class="progress-track">
+        <div id="finderProgress"></div>
+      </div>
+    </div>
+
+    <div id="finderContent">
+
+      <div class="finder-question">
+        <span>01</span>
+        <h3>What matters most right now?</h3>
+      </div>
+
+      <div class="option-grid">
+        <button class="finder-option" onclick="finderNext('Family protection')">
+          <b>Family</b>
+          <small>Protect people who depend on me</small>
+        </button>
+
+        <button class="finder-option" onclick="finderNext('Health')">
+          <b>Health</b>
+          <small>Prepare for medical expenses</small>
+        </button>
+
+        <button class="finder-option" onclick="finderNext('Vehicle')">
+          <b>Vehicle</b>
+          <small>Protect my car or bike</small>
+        </button>
+
+        <button class="finder-option" onclick="finderNext('Property')">
+          <b>Property</b>
+          <small>Protect home and belongings</small>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- PLANNER -->
+<section class="section planner-section" id="planner">
+
+  <div class="section-heading">
+    <div>
+      <span class="section-label">03 / PROTECTION PLANNER</span>
+      <h2>See your protection picture.</h2>
+    </div>
+    <p>
+      Use illustrative calculations to understand possible
+      coverage gaps. This is not financial advice.
+    </p>
+  </div>
+
+  <div class="planner-grid">
+
+    <div class="planner-main">
+
+      <div class="planner-tabs">
+        <button class="planner-tab active" onclick="switchCalc('health',this)">Health</button>
+        <button class="planner-tab" onclick="switchCalc('life',this)">Life</button>
+        <button class="planner-tab" onclick="switchCalc('motor',this)">Motor</button>
+      </div>
+
+      <div id="calculatorArea">
+
+        <div class="calc-header">
+          <span class="calc-symbol">♡</span>
+          <div>
+            <h3>Health protection planner</h3>
+            <p>Illustrative estimate based on simple inputs.</p>
+          </div>
+        </div>
+
+        <div class="input-grid">
+
+          <label>
+            <span>Family members</span>
+            <input id="healthMembers" type="number" value="4" min="1" max="15">
+          </label>
+
+          <label>
+            <span>Target annual medical budget</span>
+            <div class="input-money">
+              <b>₹</b>
+              <input id="healthBudget" type="number" value="50000">
+            </div>
+          </label>
+
+          <label>
+            <span>Existing cover</span>
+            <div class="input-money">
+              <b>₹</b>
+              <input id="healthExisting" type="number" value="300000">
+            </div>
+          </label>
+
+        </div>
+
+        <button class="calculate-btn" onclick="calculateHealth()">
+          Calculate protection view →
+        </button>
+
+        <div class="calc-result" id="healthResult">
+          <div>
+            <small>Illustrative protection target</small>
+            <strong>₹5.0L</strong>
+          </div>
+          <div>
+            <small>Illustrative gap</small>
+            <strong>₹2.0L</strong>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <aside class="planner-side">
+
+      <div class="score-card">
+        <div class="score-top">
+          <span>Protection index</span>
+          <span>Demo</span>
+        </div>
+
+        <div class="big-score">68</div>
+        <div class="score-bar">
+          <span style="width:68%"></span>
+        </div>
+
+        <p>
+          Your plan is a starting point. Review actual policy
+          documents and professional advice before purchasing.
+        </p>
+      </div>
+
+      <div class="planner-checklist">
+        <h4>Planning checklist</h4>
+        <div class="check-row"><span>✓</span> Emergency fund</div>
+        <div class="check-row"><span>✓</span> Health protection</div>
+        <div class="check-row"><span>○</span> Life protection</div>
+        <div class="check-row"><span>○</span> Asset protection</div>
+      </div>
+
+    </aside>
+  </div>
+</section>
+
+
+<!-- WORKSPACE -->
+<section class="workspace section">
+
+  <div class="section-heading">
+    <div>
+      <span class="section-label">04 / MY WORKSPACE</span>
+      <h2>Your insurance command centre.</h2>
+    </div>
+    <p>
+      A future-ready interface for policies, documents,
+      reminders and claims.
+    </p>
+  </div>
+
+  <div class="workspace-grid">
+
+    <div class="workspace-card large">
+      <div class="workspace-icon">▤</div>
+      <span class="workspace-label">POLICIES</span>
+      <h3>Policy Vault</h3>
+      <p>Organise policy details, renewal dates and important documents in one place.</p>
+      <button onclick="showToast('Policy Vault is available in demo mode.')">Open vault →</button>
+    </div>
+
+    <div class="workspace-card">
+      <div class="workspace-icon">◷</div>
+      <span class="workspace-label">REMINDERS</span>
+      <h3>Renewal Radar</h3>
+      <div class="renewal-item">
+        <span>Motor policy</span>
+        <strong>42 days</strong>
+      </div>
+      <div class="renewal-item">
+        <span>Health policy</span>
+        <strong>78 days</strong>
+      </div>
+    </div>
+
+    <div class="workspace-card">
+      <div class="workspace-icon">⌁</div>
+      <span class="workspace-label">DOCUMENTS</span>
+      <h3>Document Vault</h3>
+      <div class="document-list">
+        <span>Policy document.pdf</span>
+        <span>ID proof.pdf</span>
+        <span>Medical report.pdf</span>
+      </div>
+      <button onclick="showToast('Secure document storage requires a backend.')">Manage documents →</button>
+    </div>
+
+    <div class="workspace-card">
+      <div class="workspace-icon">↗</div>
+      <span class="workspace-label">CLAIMS</span>
+      <h3>Claim Tracker</h3>
+      <div class="claim-mini">
+        <span class="claim-status"></span>
+        <div>
+          <strong>Demo claim</strong>
+          <small>Documents reviewed</small>
+        </div>
+        <b>65%</b>
+      </div>
+      <button onclick="scrollToSection('claims')">View timeline →</button>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- CLAIMS -->
+<section class="section claims-section" id="claims">
+
+  <div class="claims-copy">
+    <span class="section-label">05 / CLAIM SUPPORT</span>
+    <h2>Make the claim journey easier to understand.</h2>
+    <p>
+      Follow a simple illustrative timeline showing how a claim
+      process may progress. Actual procedures vary by insurer and policy.
+    </p>
+
+    <button class="primary-btn" onclick="showToast('Claim assistance demo opened.')">
+      Start claim guide →
+    </button>
+  </div>
+
+  <div class="timeline">
+
+    <div class="timeline-item completed">
+      <div class="timeline-marker">✓</div>
+      <div>
+        <small>STEP 01</small>
+        <h4>Incident reported</h4>
+        <p>Notify the relevant insurer or claims channel.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item completed">
+      <div class="timeline-marker">✓</div>
+      <div>
+        <small>STEP 02</small>
+        <h4>Documents collected</h4>
+        <p>Prepare the documents requested for assessment.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item current">
+      <div class="timeline-marker">03</div>
+      <div>
+        <small>STEP 03</small>
+        <h4>Assessment</h4>
+        <p>The insurer reviews the claim according to policy terms.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-marker">04</div>
+      <div>
+        <small>STEP 04</small>
+        <h4>Decision & settlement</h4>
+        <p>Outcome depends on coverage, documentation and policy conditions.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- COMPARISON -->
+<section class="section comparison-section">
+
+  <div class="section-heading">
+    <div>
+      <span class="section-label">06 / COMPARE</span>
+      <h2>Compare coverage concepts.</h2>
+    </div>
+    <p>
+      Learn what different protection structures generally cover.
+    </p>
+  </div>
+
+  <div class="comparison-table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Basic cover</th>
+          <th>Comprehensive</th>
+          <th>Protection + add-ons</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Core protection</td>
+          <td>✓</td>
+          <td>✓</td>
+          <td>✓</td>
+        </tr>
+        <tr>
+          <td>Broader risk coverage</td>
+          <td>—</td>
+          <td>✓</td>
+          <td>✓</td>
+        </tr>
+        <tr>
+          <td>Optional enhancements</td>
+          <td>Limited</td>
+          <td>Available</td>
+          <td>Selected</td>
+        </tr>
+        <tr>
+          <td>Premium impact</td>
+          <td>Generally lower</td>
+          <td>Generally higher</td>
+          <td>Depends on options</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="table-note">
+    Illustrative comparison only. Actual benefits, exclusions, limits and pricing
+    depend on the specific policy wording.
+  </p>
+</section>
+
+
+<!-- KNOWLEDGE -->
+<section class="section knowledge-section" id="knowledge">
+
+  <div class="section-heading">
+    <div>
+      <span class="section-label">07 / KNOWLEDGE HUB</span>
+      <h2>Insurance, without the jargon.</h2>
+    </div>
+    <button class="text-btn" onclick="showToast('Knowledge Hub demo opened.')">View all articles →</button>
+  </div>
+
+  <div class="article-grid">
+
+    <article class="article-card" onclick="showArticle('Waiting periods')">
+      <div class="article-visual gradient-one">
+        <span>01</span>
+      </div>
+      <div class="article-body">
+        <small>HEALTH • 5 MIN READ</small>
+        <h3>What is a waiting period?</h3>
+        <p>A simple explanation of one of the most important health-policy concepts.</p>
+        <b>Read guide →</b>
+      </div>
+    </article>
+
+    <article class="article-card" onclick="showArticle('Sum insured')">
+      <div class="article-visual gradient-two">
+        <span>02</span>
+      </div>
+      <div class="article-body">
+        <small>PLANNING • 4 MIN READ</small>
+        <h3>Understanding sum insured</h3>
+        <p>Learn how the chosen coverage amount relates to financial risk.</p>
+        <b>Read guide →</b>
+      </div>
+    </article>
+
+    <article class="article-card" onclick="showArticle('Exclusions')">
+      <div class="article-visual gradient-three">
+        <span>03</span>
+      </div>
+      <div class="article-body">
+        <small>POLICY • 6 MIN READ</small>
+        <h3>Why exclusions matter</h3>
+        <p>How to read limitations and conditions before buying a policy.</p>
+        <b>Read guide →</b>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+<!-- FAQ -->
+<section class="section faq-section">
+
+  <div class="faq-title">
+    <span class="section-label">08 / FAQ</span>
+    <h2>Questions,<br><span>answered.</span></h2>
+  </div>
+
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <button onclick="toggleFaq(this)">
+        <span>Can I buy a policy from this demo?</span>
+        <b>+</b>
+      </button>
+      <div class="faq-answer">
+        No. This version is a demonstration platform. Real policy issuance,
+        payment and insurer integrations can be connected in a production version.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button onclick="toggleFaq(this)">
+        <span>Are the calculator results financial advice?</span>
+        <b>+</b>
+      </button>
+      <div class="faq-answer">
+        No. They are illustrative planning calculations intended to help users
+        understand concepts.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button onclick="toggleFaq(this)">
+        <span>Can real insurers be connected later?</span>
+        <b>+</b>
+      </button>
+      <div class="faq-answer">
+        Yes. A production backend can later connect approved insurer,
+        quotation, policy, payment and claims APIs subject to the required
+        commercial, regulatory and technical arrangements.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button onclick="toggleFaq(this)">
+        <span>Can I use my own domain?</span>
+        <b>+</b>
+      </button>
+      <div class="faq-answer">
+        Yes. The static frontend can later be deployed with a custom domain
+        and HTTPS through a suitable hosting provider.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- CTA -->
+<section class="final-cta section">
+
+  <div class="cta-glow"></div>
+
+  <span class="section-label">START WITH CLARITY</span>
+  <h2>Build your protection<br><span>one decision at a time.</span></h2>
+
+  <p>
+    Explore the demo, understand your needs and organise
+    the next step in your insurance journey.
+  </p>
+
+  <button class="primary-btn large" onclick="openFinder()">
+    Explore Insurance Hub →
+  </button>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer>
+
+  <div class="footer-main">
+
+    <div class="footer-brand">
+      <div class="brand">
+        <div class="brand-mark">IH</div>
+        <div>
+          <div class="brand-name">Insurance<span>Hub</span></div>
+          <div class="brand-sub">SMART PROTECTION PLATFORM</div>
+        </div>
+      </div>
+
+      <p>
+        An education-first insurance technology interface
+        designed for a future-ready digital experience.
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <div>
+        <h4>Platform</h4>
+        <a href="#solutions">Solutions</a>
+        <a href="#planner">Planner</a>
+        <a href="#claims">Claims</a>
+        <a href="#knowledge">Knowledge</a>
+      </div>
+
+      <div>
+        <h4>Company</h4>
+        <a href="#" onclick="showToast('About page — coming in the next module.')">About</a>
+        <a href="#" onclick="showToast('Contact module — coming in the next module.')">Contact</a>
+        <a href="#" onclick="showToast('Partner module — coming in the next module.')">Partners</a>
+      </div>
+
+      <div>
+        <h4>Legal</h4>
+        <a href="#" onclick="showToast('Privacy page — production module.')">Privacy</a>
+        <a href="#" onclick="showToast('Terms page — production module.')">Terms</a>
+        <a href="#" onclick="showToast('Disclaimer page — production module.')">Disclaimer</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 Insurance Hub. Demo platform.</span>
+    <span>Designed & developed by <strong>Utkal Digital Lab</strong></span>
+  </div>
+
+</footer>
+
+
+<!-- MOBILE NAV -->
+<nav class="mobile-nav">
+  <button onclick="scrollToSection('home')" class="mobile-nav-item active">
+    <span>⌂</span>
+    <small>Home</small>
+  </button>
+  <button onclick="scrollToSection('solutions')" class="mobile-nav-item">
+    <span>◈</span>
+    <small>Cover</small>
+  </button>
+  <button onclick="scrollToSection('planner')" class="mobile-nav-item">
+    <span>＋</span>
+    <small>Plan</small>
+  </button>
+  <button onclick="scrollToSection('claims')" class="mobile-nav-item">
+    <span>⌁</span>
+    <small>Claims</small>
+  </button>
+  <button onclick="scrollToSection('knowledge')" class="mobile-nav-item">
+    <span>≡</span>
+    <small>Learn</small>
+  </button>
+</nav>
+
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="modal">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <span>✓</span>
+  <div id="toastText">Done</div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
